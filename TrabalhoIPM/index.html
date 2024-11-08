@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo do Tênis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div id="mensagem-boas-vindas" class="mensagem-boas-vindas"></div>
+
+    <header class="cabecalho">
+        <h1>Mundo do Tênis</h1>
+        <button onclick="mostrarBoasVindas()" class="botao">Fazer Login</button>
+        <button onclick="alternarModo()" id="botao-modo" class="botao">Modo Escuro</button>
+    </header>
+
+    <main>
+        
+        <div class="filtros">
+            <button onclick="filtrarJogadores('todos')">Todos</button>
+            <button onclick="filtrarJogadores('atm')">Atletas Masculino</button>
+            <button onclick="filtrarJogadores('atf')">Ateletas Femininas</button>
+        </div>
+
+       
+        <section class="galeria-jogadores">
+            <div class="cartao-jogador" data-categoria="atm" onclick="curtirJogador(this)">
+                <img src="Imagens/federer.jpg" alt="Roger Federer">
+                <h3>Roger Federer</h3>
+                <p>❤️<span class="contador-curtidas">0</span></p>
+            </div>
+
+            <div class="cartao-jogador" data-categoria="atf" onclick="curtirJogador(this)">
+                <img src="Imagens/serena.jpg" alt="Serena Williams">
+                <h3>Serena Williams</h3>
+                <p>❤️<span class="contador-curtidas">0</span></p>
+            </div>
+            
+        </section>
+
+       
+        <section class="contato">
+            <h2>Entre em Contato</h2>
+            <form onsubmit="enviarFormulario(event)">
+                <input type="text" id="nome" placeholder="seu nome" required>
+                <input type="email" id="email" placeholder="seu email" required>
+                <button type="submit" class="botao">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
